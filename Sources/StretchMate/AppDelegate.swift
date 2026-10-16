@@ -357,7 +357,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         intervalParent.submenu = intervalMenu
         let breakParent = NSMenuItem(title: "Break length", action: nil, keyEquivalent: "")
         breakParent.submenu = breakMenu
-        let routineItem = item("Neck & shoulder routine (3 moves)", #selector(pickMode(_:)))
+        let routineItem = item("Neck, shoulder & back routine (4 moves)", #selector(pickMode(_:)))
         routineItem.tag = 0
         modeMenu.addItem(routineItem)
         let randomItem = item("One random exercise", #selector(pickMode(_:)))

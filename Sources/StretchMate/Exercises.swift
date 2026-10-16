@@ -2,7 +2,7 @@ import Foundation
 
 enum FigureKind {
     case neckRotation, neckNod, neckTilt, chinTuck, shoulderRoll, scapularSqueeze, eyes
-    case spinalExtension, wrist, hipFlexor, posture
+    case spinalExtension, wrist, hipFlexor, posture, standingBackExtension
 
     /// Seconds for one swing (ping-pong) or one full cycle (loop).
     var duration: Double {
@@ -18,6 +18,7 @@ enum FigureKind {
         case .wrist: 2.0
         case .hipFlexor: 2.4
         case .posture: 2.4
+        case .standingBackExtension: 3.0
         }
     }
 
@@ -51,8 +52,15 @@ struct Exercise {
                 "Drop them down and around. Repeat 5 times."],
         kind: .shoulderRoll)
 
+    static let standingBackExtension = Exercise(
+        title: "Stand up: back extension",
+        steps: ["Stand up, feet hip-width apart.",
+                "Hands on your lower back, fingers pointing down.",
+                "Gently lean back, looking up; hold 3 s. Repeat 5 times."],
+        kind: .standingBackExtension)
+
     /// Shown on every break in "routine" mode, in this order.
-    static let routine: [Exercise] = [neckRotation, neckNod, shoulderRoll]
+    static let routine: [Exercise] = [neckRotation, neckNod, shoulderRoll, standingBackExtension]
 
     /// Pool for "random" mode.
     static let all: [Exercise] = routine + [

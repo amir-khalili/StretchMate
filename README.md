@@ -2,15 +2,16 @@
 
 A native Swift/SwiftUI menu bar app. Every 20 minutes it shows a small floating card (420×320) with animated exercises and step-by-step instructions. No Dock icon, no network access, no dependencies outside Apple frameworks.
 
-By default every break runs the same **neck & shoulder routine**, with the break length split evenly across the three moves:
+By default every break runs the same **neck, shoulder & back routine**, with the break length split evenly across the four moves:
 
 1. **Neck rotation**: turn to look over each shoulder
 2. **Neck forward & back**: chin to chest, then look up
 3. **Shoulder rolls**: up, back, down
+4. **Stand up: back extension**: stand, hands on lower back, gently lean back (for lower-back pain from sitting)
 
 To get one random exercise per break instead, use **Settings → Each break → One random exercise**. The random pool includes the routine plus neck tilts, chin tucks, shoulder-blade squeeze, 20-20-20 eye break, spinal extension, wrist stretch, hip flexor stretch and a posture check.
 
-Tip: at 30 s each move gets 10 s. For longer holds, set **Break length** to 45–60 s.
+Tip: at 30 s each move gets 7.5 s. For longer holds, set **Break length** to 60 s or more.
 
 ## Build & install
 

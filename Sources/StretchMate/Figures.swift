@@ -122,6 +122,7 @@ enum FigureGeometry {
         case .posture: seated(&d, t, monitor: true)
         case .wrist: wrist(&d, t)
         case .hipFlexor: hipFlexor(&d, t)
+        case .standingBackExtension: standingBackExtension(&d, t)
         case .eyes: break // drawn by EyeBreakView
         }
         return d
@@ -281,6 +282,23 @@ enum FigureGeometry {
         d.body.poly(hip, P(32, 80), P(18, 92), P(12, 93))          // back leg, heel up
         d.body.poly(shoulder, P(shoulder.x - 7, shoulder.y + 15), P(hip.x + 2, hip.y - 6)) // hand on hip
         d.accent.poly(P(6, 95), P(94, 95))
+    }
+
+    /// Side view, standing with hands on the lower back, leaning back from the hips.
+    private static func standingBackExtension(_ d: inout Drawing, _ t: Double) {
+        let hip = P(50, 62)
+        let a = -22 * t // negative = top of the body moves back (left)
+        let r = { (p: CGPoint) in rotate(p, around: hip, degrees: a) }
+        let shoulder = r(P(50, 36))
+        sideHead(&d, r(P(51, 21)), degrees: a)
+        d.body.poly(r(P(50.5, 29)), shoulder)                                    // neck
+        d.body.move(to: hip); d.body.addQuadCurve(to: shoulder, control: r(P(54, 49))) // arched spine
+        d.body.poly(shoulder, r(P(40, 47)), r(P(46, 58)))                        // hand on lower back
+        d.body.poly(hip, P(48, 78), P(47, 93), P(54, 93))                        // legs
+        // backward arc + floor
+        d.accent.move(to: P(26, 6)); d.accent.addQuadCurve(to: P(9, 24), control: P(13, 8))
+        d.accent.poly(P(8, 19), P(9, 24), P(14, 23))
+        d.accent.poly(P(14, 95), P(86, 95))
     }
 }
 

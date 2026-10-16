@@ -14,7 +14,7 @@ enum Settings {
     }
 
     enum BreakMode: String {
-        case routine  // neck rotation → neck forward & back → shoulder rolls, every break
+        case routine  // neck rotation → neck forward & back → shoulder rolls → standing back extension, every break
         case random   // one random exercise from the full list
     }
 
